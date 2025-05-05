@@ -1,0 +1,25 @@
+{
+    "name": "tgbots_upload",
+    "license": "MIT",
+    "version": "0.0.1",
+    "type": "module",
+    "packageManager": "pnpm@10.10.0",
+    "scripts": {
+        "dev": "dotenv tsx watch ./src/main.ts",
+        "start": "tsx ./src/main.ts"
+    },
+    "pnpm": {
+        "onlyBuiltDependencies": [
+            "better-sqlite3"
+        ]
+    },
+    "dependencies": {
+        "@mtcute/node": "^0.23.0",
+        "dotenv-cli": "^8.0.0",
+        "tsx": "^4.19.4"
+    },
+    "devDependencies": {
+        "@types/node": "^22.15.3",
+        "typescript": "^5.8.3"
+    }
+}
