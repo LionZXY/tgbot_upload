@@ -9,4 +9,12 @@ else
   cat > "$file_to_upload"
 fi
 
-pnpm start
+if [[ -z "${NAME}" ]]; then
+  echo 'No NAME variable defined, so file name is "input"'
+else
+  new_path="/app/${NAME}"
+  cp $file_to_upload $new_path
+  file_to_upload=$new_path
+fi
+
+pnpm start --file $file_to_upload

@@ -4,9 +4,10 @@ const API_ID = Number.parseInt(process.env.API_ID!)
 const API_HASH = process.env.API_HASH!
 const BOT_TOKEN = process.env.BOT_TOKEN!
 const TO_USER =  process.env.TO_USER ?? '1235433892'
+const DEFAULT_FILE_PATH = process.env.DEFAULT_FILE_PATH ?? '/app/input'
 
 if (Number.isNaN(API_ID) || !API_HASH) {
     throw new Error('API_ID or API_HASH not set!')
 }
 
-export { API_HASH, API_ID, BOT_TOKEN, TO_USER }
+export { API_HASH, API_ID, BOT_TOKEN, TO_USER, DEFAULT_FILE_PATH }

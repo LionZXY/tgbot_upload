@@ -16,6 +16,7 @@
     "dependencies": {
         "@mtcute/node": "^0.23.0",
         "dotenv-cli": "^8.0.0",
+        "minimist": "^1.2.8",
         "tsx": "^4.19.4"
     },
     "devDependencies": {
