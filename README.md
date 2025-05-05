@@ -4,12 +4,12 @@
 
 Just type it in anywhere:
 ```bash
-cat /path/to/file | docker run -i --rm lionzxy/tgbot_upload -e BOT_TOKEN='<api_token>' TO_USER='<username_or_userid>'
+cat /path/to/file | docker run -i --rm lionzxy/tgbot_upload -e BOT_TOKEN='<api_token>' TO_USER='<userid>'
 ```
 Where:
 - `/path/to/file` - is your file
 - `<api_token>` - bot api token
-- `<username_or_userid>` - Chat id, for example: `1235433892`. Can be got by open `https://api.telegram.org/bot<api_token>/getUpdates` in browser
+- `<userid>` - Chat id, for example: `1235433892`. Can be got by open `https://api.telegram.org/bot<api_token>/getUpdates` in browser
 
 ## Useful lines
 

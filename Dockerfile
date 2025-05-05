@@ -22,4 +22,4 @@ ARG ARG_API_HASH
 ENV API_ID=$ARG_API_ID
 ENV API_HASH=$ARG_API_HASH
 
-CMD ["sh","/app/input.sh"]
+ENTRYPOINT exec sh "/app/input.sh"
