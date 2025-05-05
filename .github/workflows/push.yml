@@ -32,4 +32,4 @@ jobs:
           build-args: |
             ARG_API_ID=${{ secrets.TG_API_ID }}
             ARG_API_HASH=${{ secrets.TG_API_HASH }}
-          tags: lionzxy/tgbot_upload:latest, lionzxy/lionzxy/tgbot_upload:${{ github.run_number }}
+          tags: lionzxy/tgbot_upload:latest, lionzxy/tgbot_upload:${{ github.run_number }}

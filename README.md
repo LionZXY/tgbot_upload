@@ -1,6 +1,15 @@
 # Packed file uploader for Telegram Bot Api
 
+## Usage
 
+Just type it in anywhere:
+```bash
+cat /path/to/file | docker run docker run -i --rm lionzxy/tgbot_upload -e BOT_TOKEN='<api_token>' TO_USER='<username_or_userid>'
+```
+Where:
+- `/path/to/file` - is your file
+- `<api_token>` - bot api token
+- `<username_or_userid>` - Username or user, for example: `lionzxy`, `1235433892`
 
 ## Development
 
