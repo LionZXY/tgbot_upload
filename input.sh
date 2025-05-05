@@ -1,8 +1,10 @@
-!#/bin/sh
+#!/bin/sh
 
 file_to_upload='/app/input'
 
-if [ -d "$file_to_upload" ]; then
+if [ -e "$file_to_upload" ]; then
+  echo '/app/input is ready, so skip waiting for stdin'
+else
   echo 'Wait for file in stdin...'
   cat > "$file_to_upload"
 fi
