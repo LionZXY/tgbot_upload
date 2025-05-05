@@ -1,4 +1,4 @@
-!#/bin/bash
+!#/bin/sh
 
 file_to_upload='/app/input'
 

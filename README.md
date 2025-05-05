@@ -9,7 +9,7 @@ cat /path/to/file | docker run -i --rm lionzxy/tgbot_upload -e BOT_TOKEN='<api_t
 Where:
 - `/path/to/file` - is your file
 - `<api_token>` - bot api token
-- `<username_or_userid>` - Username or user, for example: `lionzxy`, `1235433892`
+- `<username_or_userid>` - Chat id, for example: `1235433892`. Can be got by open `https://api.telegram.org/bot<api_token>/getUpdates` in browser
 
 ## Useful lines
 

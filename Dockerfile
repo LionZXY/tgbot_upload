@@ -13,8 +13,6 @@ RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --prod --frozen-l
 
 FROM base
 
-RUN apk add --no-cache bash
-
 COPY --from=prod-deps /app/node_modules /app/node_modules
 COPY input.sh /app/input.sh
 
@@ -24,4 +22,4 @@ ARG ARG_API_HASH
 ENV API_ID=$ARG_API_ID
 ENV API_HASH=$ARG_API_HASH
 
-ENTRYPOINT exec "/app/input.sh"
+CMD ["sh","/app/input.sh"]
