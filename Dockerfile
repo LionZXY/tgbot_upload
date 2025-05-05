@@ -12,7 +12,11 @@ FROM base AS prod-deps
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --prod --frozen-lockfile
 
 FROM base
+
+RUN apk add --no-cache bash
+
 COPY --from=prod-deps /app/node_modules /app/node_modules
+COPY input.sh /app/input.sh
 
 ARG ARG_API_ID
 ARG ARG_API_HASH
@@ -20,4 +24,4 @@ ARG ARG_API_HASH
 ENV API_ID=$ARG_API_ID
 ENV API_HASH=$ARG_API_HASH
 
-CMD [ "input.sh" ]
+ENTRYPOINT exec "/app/input.sh"

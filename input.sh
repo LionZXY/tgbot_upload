@@ -1,6 +1,6 @@
 !#/bin/bash
 
-file_to_upload = /app/input
+file_to_upload='/app/input'
 
 if [ -d "$file_to_upload" ]; then
   echo 'Wait for file in stdin...'
