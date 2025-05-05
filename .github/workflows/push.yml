@@ -1,0 +1,35 @@
+name: push
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  buildx:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+      - name: Set up Docker Buildx
+        id: buildx
+        uses: docker/setup-buildx-action@v3
+        with:
+          install: true
+      - name: Login to DockerHub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Build and push
+        id: docker_build
+        uses: docker/build-push-action@v6
+        with:
+          platforms: linux/amd64,linux/arm64
+          push: true
+          build-args: |
+            ARG_API_ID=${{ secrets.TG_API_ID }}
+            ARG_API_HASH=${{ secrets.TG_API_HASH }}
+          tags: lionzxy/tgbot_upload:latest, lionzxy/lionzxy/tgbot_upload:${{ github.run_number }}

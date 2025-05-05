@@ -1,6 +1,6 @@
-# tgbots_upload
+# Packed file uploader for Telegram Bot Api
 
-mtcute powered Telegram bot
+
 
 ## Development
 
@@ -10,5 +10,3 @@ cp .env.example .env
 # edit .env
 pnpm start
 ```
-
-*generated with @mtcute/create-bot*
