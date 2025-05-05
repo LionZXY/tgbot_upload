@@ -1,4 +1,4 @@
-import {InputMedia, TelegramClient} from '@mtcute/node'
+import {InputMedia, MemoryStorage, TelegramClient} from '@mtcute/node'
 import minimist from 'minimist'
 
 import * as env from './env.js'
@@ -6,7 +6,8 @@ import * as env from './env.js'
 const tg = new TelegramClient({
     apiId: env.API_ID,
     apiHash: env.API_HASH,
-    storage: 'bot-data/session'
+    storage: new MemoryStorage(),
+    disableUpdates: true
 })
 
 const argv = minimist(process.argv.slice(2));
